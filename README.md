@@ -1,17 +1,3 @@
----
-title: "2016 Election Tweets"
-author: "Mike"
-date: "2/16/2020"
-output: 
-  html_document:
-    toc: TRUE
-    keep_md: TRUE
-
-
----
-
-
-
 
 
 ## EDA
