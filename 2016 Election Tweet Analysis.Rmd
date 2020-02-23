@@ -318,7 +318,7 @@ plot(network.edge,
 )
 
 ```
-```{r RT Percent LM, include=FALSE}
+```{r, include=FALSE}
 
 troll.z.cent.df <- f.cent.df %>% filter(troll == "troll")
 z.cent.df <- f.cent.df
@@ -401,7 +401,7 @@ grid.arrange(troll.bet.v.rt,troll.deg.v.rt,troll.eig.v.rt,ncol=1,nrow=3)
 ```
 
 
-```{r Model Performance, include=FALSE}
+```{r, include=FALSE}
 
 # Saving off the troll subset to another dataframe
 troll.subset.save <- troll.subset
@@ -539,7 +539,7 @@ plot(varImp(fit.rf, scale = FALSE))
 
 Text analysis was performed using a small function to preprocess tweet text including: stemming, stop words removed, puncuation removed, conversion to lower case, numbers removed, white space removed. Additional words removed include "rt","amp","http". 
 
-```{r Text Preprocessing, include=FALSE}
+```{r, include=FALSE}
 # Begin Text Analysis ---------------------------
 
 #text <- tweets$text
@@ -608,7 +608,7 @@ f.text.tdm.m <- text.corp.tdm.m
 
 Natural language processing using Latent Dirichlet allocation, using k=2 for simplicity, the top 10 terms for each topic are plotted. 
 
-```{r LDA, include=FALSE}
+```{r, include=FALSE}
 
 ff.text.lda <- LDA(f.text.dtm.n, k = 2, control = list(seed = 333))
 ff.text.topics <- tidy(ff.text.lda, matrix = "beta")
@@ -629,7 +629,7 @@ ff.text.topics.plot <- ff.comm.text.topics.top %>%
   
 ```
 
-```{r Topic Plot, echo=FALSE}
+```{r, echo=FALSE}
 
 plot(ff.text.topics.plot)
 
@@ -637,7 +637,7 @@ plot(ff.text.topics.plot)
 
 While word clouds have limited utility in text analysis, this is a plot of the top terms sized according to frequency from trolls on election day. 
 
-```{r Word Cloud, echo=FALSE, warning=FALSE,fig.width=14}
+```{r, echo=FALSE, warning=FALSE,fig.width=14}
 
 
 word.freq<-sort(rowSums(f.text.tdm.m), decreasing=T)
@@ -654,7 +654,7 @@ title('Most frequent words during November 11th 2016',col.main='black',cex.main=
 
 Using cluster edge betweenness, high betweeness edges are removed sequentially untill the best partitioning of the network is achived. Each community had average betweeness centrality calculated to find the "community of information brokers" in the network. In this example, troll community 9 had the highest average betweeness centrality (2).
 
-```{r Group Detection, include=FALSE}
+```{r, include=FALSE}
 
 # Community detection for subset F -----------------------------
 
@@ -674,7 +674,7 @@ f.cent.df.troll <- f.cent.df %>% filter(troll == "troll")
 f.comm.bet.mean <- aggregate( bet ~ membership, f.cent.df.troll, mean )
 ```
 
-```{r ceb deg, echo=FALSE, warning=FALSE,fig.width=14}
+```{r, echo=FALSE, warning=FALSE,fig.width=14}
 
 head(f.comm.bet.mean[order(-f.comm.bet.mean$bet),], n=5)
 
@@ -682,7 +682,7 @@ head(f.comm.bet.mean[order(-f.comm.bet.mean$bet),], n=5)
 
 
 
-```{r LDA Tuning, include=FALSE}
+```{r, include=FALSE}
 # GRoup 9 of the F subset has the highest betweenness
 f.cent.df.comm.sub <- f.cent.df.troll %>% filter(membership == "9")
 colnames(f)[colnames(f)=="user_key"] <- "user"
@@ -720,7 +720,7 @@ f.result <- FindTopicsNumber(
 ```
 
 
-```{r Betweeness Network, include=FALSE}
+```{r, include=FALSE}
 
 #graph from edge list
 nodes.cent <- nodes.l %>% left_join(f.cent.df.troll[,c("user","membership")], by=c("user"))
@@ -778,13 +778,13 @@ plot(cent.network.edge,
 This community was then subset and their tweets were preprocessed as outlined above. On larger data sets LDA tuning has significant performance impacts. On this smaller subset of community 9, LDA tuning was performed to find an optimal K values (between K=2 and k=15) for further topic analysis.
 The minimize function suggests a k=2, with the maximize function showing k=5. We'll setting on a K=3 for the remaining analysis.
 
-```{r LDA tuning comm, echo=FALSE, warning=FALSE,fig.width=14}
+```{r, echo=FALSE, warning=FALSE,fig.width=14}
 
 FindTopicsNumber_plot(f.result)
 
 ```
 
-```{r Community Topic, include=FALSE}
+```{r, include=FALSE}
 
 f.text.lda <- LDA(f.comm.text.dtm.n, k = 3, control = list(seed = 333))
 f.text.topics <- tidy(f.text.lda, matrix = "beta")
@@ -806,14 +806,14 @@ f.text.topics.plot <- f.comm.text.topics.top %>%
 
 Information brokers community topic plot
 
-```{r LDA tuning plot, echo=FALSE, warning=FALSE,fig.width=14}
+```{r, echo=FALSE, warning=FALSE,fig.width=14}
 
 plot(f.text.topics.plot)
 
 ```
 
 
-```{r Community Topic Plot, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=FALSE}
 
 #This doesn't work
  

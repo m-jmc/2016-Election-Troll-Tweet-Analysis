@@ -57,11 +57,11 @@ Natural language processing using Latent Dirichlet allocation, using k=2 for sim
 
 
 
-![](2016_Election_Tweet_Analysis_files/figure-html/Topic Plot-1.png)<!-- -->
+![](2016_Election_Tweet_Analysis_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 
 While word clouds have limited utility in text analysis, this is a plot of the top terms sized according to frequency from trolls on election day. 
 
-![](2016_Election_Tweet_Analysis_files/figure-html/Word Cloud-1.png)<!-- -->
+![](2016_Election_Tweet_Analysis_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
 ## Community Detection
 
@@ -88,7 +88,7 @@ Using cluster edge betweenness, high betweeness edges are removed sequentially u
 
 Plot of the high betweenness community compared to the wider network graph, community 9 with highest average betweeness is show in red. Other detected communities containing more than 4 trolls shown in shades of green.
 
-![](2016_Election_Tweet_Analysis_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](2016_Election_Tweet_Analysis_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
 
 ## LDA Tuning
@@ -96,13 +96,13 @@ Plot of the high betweenness community compared to the wider network graph, comm
 This community was then subset and their tweets were preprocessed as outlined above. On larger data sets LDA tuning has significant performance impacts. On this smaller subset of community 9, LDA tuning was performed to find an optimal K values (between K=2 and k=15) for further topic analysis.
 The minimize function suggests a k=2, with the maximize function showing k=5. We'll setting on a K=3 for the remaining analysis.
 
-![](2016_Election_Tweet_Analysis_files/figure-html/LDA tuning comm-1.png)<!-- -->
+![](2016_Election_Tweet_Analysis_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
 
 
 
 Information brokers community topic plot
 
-![](2016_Election_Tweet_Analysis_files/figure-html/LDA tuning plot-1.png)<!-- -->
+![](2016_Election_Tweet_Analysis_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 
 
 
