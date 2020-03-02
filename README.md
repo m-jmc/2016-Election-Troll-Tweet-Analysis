@@ -1,3 +1,11 @@
+# Abstract
+*This analysis researches a selection of Tweets obtained in by NBC in the wake of the 2016 election interference campaign by Russian assets. Using social network analysis, topic modeling, and other machine learning techniques I’m aiming to understand the messages and factors which differentiated effective trolls from non-effective trolls. The implication for this work was determining what and how trolls were able to build influence, serving as a blueprint from which to formulate countermeasures.*
+
+# Introduction
+In the lead up to the 2016 presidential election Russia’s “Internet Research Agency” (IRA) worked to gain influence on various social media platforms. Since as early as 2009 Russia has used social media to influence domestic politics. The U.S. election of 2016 represents the dramatic realization that these efforts were also occurring abroad. While their role and impact has been debated by those who had the most to gain by the troll activities, the US intelligence agencies stand united in their indictment of the IRA. The trolls aim was to polarize the US electorate and sow disinformation, capitalizing on various conspiracy theories and extremist rhetoric.
+This analysis seeks to understand and quantify the efforts of the Russian influence campaign during the 2016 election. In doing so, I’m aiming to provide a blueprint of what makes a troll effective through analysis of their social network graph and messaging. Using machine learning models the analysis attempts to understand and predict features which may indicate troll success. This in effort to lay the groundwork for developing methods to identify and counteract troll behavior.
+
+
 
 
 ## EDA
