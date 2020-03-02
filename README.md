@@ -91,4 +91,4 @@ Information brokers community topic plot
 ![](2016_Election_Tweet_Analysis_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 
 
-
+As we continue to dive into the topic modeling aspect, I'm looking to map topics across the different communities and observe how different messages are sent to different groups of non-trolls. We'll also look at determining features of more effective trolls. 
